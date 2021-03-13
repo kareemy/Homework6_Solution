@@ -1,4 +1,4 @@
-## Your Name:
+## Your Name: Kareem Dana - SOLUTION
 
 # CIDM 3312 Homework 6 - Movie Database
 Create an ASP.NET Core application with an EF Core Database that allows the user to list movies and add movies to the database.
