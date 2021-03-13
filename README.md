@@ -20,15 +20,16 @@ Create an ASP.NET Core application with an EF Core Database that allows the user
   | decimal       | Price         | Range from 1 to 100, DataType = DataType.Currency |
   | string        | Rating        | Maximum length = 5, Required |
 
-4. Use dependency injection to register the database context.
-5. Use migrations to create the database.
-6. Seed at least 4 movies initially.
-7. Create a folder within Pages/ called “Movies”.
-8. Create TWO razor pages within that folder – {Index.cshtml, Index.cshtml.cs} and {Create.cshtml, Create.cshtml.cs}
+4. Create configuration settings in `appsettings.json`.
+5. Use dependency injection to register the database context.
+6. Use migrations to create the database.
+7. Seed at least 4 movies initially.
+8. Create a folder within Pages/ called “Movies”.
+9. Create TWO razor pages within that folder – {Index.cshtml, Index.cshtml.cs} and {Create.cshtml, Create.cshtml.cs}
      * Ensure that you change the namespace of the page models to end in .Movies (e.g. Homework6.Pages.Movies)
-9. The Index razor page should look like Figure 1. Minor presentation differences are OK. It should list every movie in table format. Use table styles from bootstrap 4 (https://getbootstrap.com/docs/4.3/content/tables/)
-10. The Create razor page should look like Figure 2. It should contain a form that allows the user to add a new movie. Perform data validation on the form.
-11. When the user clicks Create, the page model should add the movie to the database and then redirect the user back to the Index page.
+10. The Index razor page should look like Figure 1. Minor presentation differences are OK. It should list every movie in table format. Use table styles from bootstrap 4 (https://getbootstrap.com/docs/4.3/content/tables/)
+11. The Create razor page should look like Figure 2. It should contain a form that allows the user to add a new movie. Perform data validation on the form.
+12. When the user clicks Create, the page model should add the movie to the database and then redirect the user back to the Index page.
 
 
 **Don't forget to comment your code.**
