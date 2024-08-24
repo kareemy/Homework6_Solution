@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+@foreach (var p in Model.Products)
+{
+    double reviewAvg = p.Reviews.Average(r => r.Score);
+    double reviewCnt = p.Reviews.Count;
+
+<div class="row">
+    <div class="col-2">
+        <img src="@p.ImageURL" class="img-fluid">
+    </div>
+    <div class="col-10">
+        <h3>@p.Name</h3>
+        <p>
+            <span>@String.Format("{0:F1}", reviewAvg) </span>
+        @for(var i = 1; i <= 5; i++)
+        {
+            if(reviewAvg >= i)
+            {
+                <i class="bi bi-star-fill" style="color: gold;"></i>
+            }
+            else if (reviewAvg > i - 1 && reviewAvg < i)
+            {
+                <i class="bi bi-star-half" style="color: gold;"></i>
+            }
+            else
+            {
+                <i class="bi bi-star"></i>
+            }
+        }
+        <span>@reviewCnt reviews</span>
+        </p>
+        <p class="fs-5">@p.Description</p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="@("#reviews" + @p.ProductID)">Show Reviews</button>
+        <div class="collapse" id="@("reviews" + @p.ProductID)">
+        @foreach (var r in p.Reviews)
+        {
+            <p class="p-2">@r.ReviewText<strong> Score: @r.Score / 5</strong></p>
+            <hr class="my-0">
+        }
+        </div>
+    </div>
+</div>
+<hr class="my-4">
+}
